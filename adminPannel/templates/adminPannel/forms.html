@@ -1,0 +1,27 @@
+{% extends 'adminPannel/base.html' %}
+
+{% block content %} 
+    <!-- Horizontal Form -->
+    <form method="post" action="{% url 'formSave' %}">
+        {% csrf_token %}
+        <div class="row mb-3">
+          <label for="stu_name" class="col-sm-2 col-form-label">Your Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="stu_name" name="stu_name">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="roll_no" class="col-sm-2 col-form-label">Roll No.</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" id="roll_no" name="roll_no">
+          </div>
+        </div>
+        
+                
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="reset" class="btn btn-secondary">Reset</button>
+        </div>
+      </form><!-- End Horizontal Form -->
+
+{% endblock content %}
